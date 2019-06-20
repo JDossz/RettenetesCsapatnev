@@ -6,7 +6,8 @@ function SumErtek()
     {
         sumErtek += data[i].ertek;
     }
-    return sumErtek;
+    document.getElementById("sumErtek").innerHTML = sumErtek;
+    document.getElementById("sumErtek").style.display = "initial";
 }
 
 /* A játékosok életkorának kiszámítása */
