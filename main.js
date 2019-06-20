@@ -41,3 +41,29 @@ function CalculateAgeOf(teljesNev)
 }
 */
 
+function Magyarok()
+{
+    var magyarok = [];
+    for (var i = 0; i < data.length; i++)
+    {
+        if (data[i].magyar == true)
+        {
+            magyarok += (data[i].vezeteknev + ' ' + data[i].utonev + ', ');
+        }
+    }
+    document.getElementById("magyarok").innerHTML = magyarok;
+}
+
+function Kulfoldiek()
+{
+    var kulfoldiek = [];
+    for (var i = 0; i < data.length; i++)
+    {
+        if (data[i].kulfoldi == true)
+        {
+            kulfoldiek += (data[i].vezeteknev + ' ' + data[i].utonev + ', ');
+        }
+    }
+    document.getElementById("kulfoldiek").innerHTML = kulfoldiek;
+}
+

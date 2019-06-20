@@ -18,10 +18,12 @@
     </head>
 
     <body>
+
         <a name="top"></a>
         <header>
             <p></p>
         </header>
+
         <nav>
             <ul id="navigation">
                 <li class="nav-list">
@@ -41,13 +43,25 @@
                 </li>
             </ul>
         </nav>
+
         <main>
             <div>
                 <a name="dorka"></a>
-                <p>A játékosok összértéke:</p>
-                <p id="sumErtek" class="appearAfterFunction"></p>
-                <button onclick="SumErtek();">Számolj!</button>
-                <p id=""></p>
+                <div>
+                    <h3>A játékosok összértéke:</h3>
+                    <p id="sumErtek">&nbsp;</p>
+                    <button onclick="SumErtek();">Számolj!</button>
+                </div>
+                <div>
+                    <h3>A magyar nemetiségű játékosok:</h3>
+                    <p id="magyarok">&nbsp;</p>
+                    <button onclick="Magyarok();">Megnyit</button>
+                </div>
+                <div>
+                    <h3>A külföldi játékosok:</h3>
+                    <p id="kulfoldiek">&nbsp;</p>
+                    <button onclick="Kulfoldiek();">Megnyit</button>
+                </div>
             </div>
             <div>
                 <a name="gergo"></a>
@@ -66,9 +80,11 @@
 
             </div>
         </main>
+
         <aside>
 
         </aside>
+        
         <footer>
             <p></p>
         </footer>
