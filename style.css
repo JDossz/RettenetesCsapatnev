@@ -1,16 +1,41 @@
 html {
-    font-size: 12px;
+    font-size: 10pt;
     font-family: Verdana;
-    background-color: beige;
+    background-color: rgb(255, 255, 230);
     color: black;
 }
+/* Eltávolítja a bullet pointokat az ul listaelemek elől, illetve a margint és paddinget. */
+.nav-list {
+    display: inline-block;
+    padding: 5px;
+    border-right: 1px solid white;
+}
 
+.nav-anchor {
+    display: block;
+    color: green;
+    font-size: 15pt;
+    text-decoration: none;
+}
+.nav-anchor:hover {
+    color: rgba(20, 167, 20, 0.356);
+    cursor: pointer;
+}
+
+/* egyenlőre elengedem a képet, majd foglalkozom vele, ha lesz időnk */
+/*
 header {
     background-image: url("/img/dsBuffer.jpg");
     opacity: 0.5;
 }
+*/
 
+
+
+
+/* egyenlőre elengedem a képet, majd foglalkozom vele, ha lesz időnk */
+/*
 footer {
     background-image: url("/img/labda.gif");
 }
-
+*/
