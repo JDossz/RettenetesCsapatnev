@@ -1,12 +1,13 @@
 html {
     font-size: 12px;
     font-family: Verdana;
-    background-color: bisque;
+    background-color: beige;
     color: black;
 }
 
 header {
-    background-image: url("/img/labda.gif");
+    background-image: url("/img/dsBuffer.jpg");
+    opacity: 0.5;
 }
 
 footer {
