@@ -10,14 +10,6 @@ function AllGoals()
     }
     return result;
 }
-//---------------------------------------------------------
-function DateFormatter(furcsaForma)
-{
-    var result = '';
-    var arr = furcsaForma.split('/')
-    result = arr[2] + '-' + arr[1] + '-' + arr[0];
-    return result;
-}
 
 /*
 function CalculateAge(birthdate)

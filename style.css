@@ -1,0 +1,15 @@
+html {
+    font-size: 12px;
+    font-family: Verdana;
+    background-color: bisque;
+    color: black;
+}
+
+header {
+    background-image: url("/img/labda.gif");
+}
+
+footer {
+    background-image: url("/img/labda.gif");
+}
+
