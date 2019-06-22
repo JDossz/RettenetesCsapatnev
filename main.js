@@ -7,6 +7,7 @@ function SumErtek()
         sumErtek += data[i].ertek;
     }
     document.getElementById("sumErtek").innerHTML = sumErtek;
+    console.log(SumErtek());
 }
 
 // A legértékesebb játékos
@@ -21,6 +22,7 @@ function MostValuablePlayer()
         }
     }
     document.getElementById("legertekesebb").innerHTML = legertekesebbJatekos;
+    console.log(MostValuablePlayer());
 }
 
 /* A játékosok életkorának kiszámítása */
