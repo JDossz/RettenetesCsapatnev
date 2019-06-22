@@ -9,6 +9,20 @@ function SumErtek()
     document.getElementById("sumErtek").innerHTML = sumErtek;
 }
 
+// A legértékesebb játékos
+function MostValuablePlayer()
+{
+    var legertekesebbJatekos = data[0];
+    for (var i = 0; i < data.length; i++)
+    {
+        if (legertekesebbJatekos.ertek < data[i].ertek)
+        {
+            legertekesebbJatekos = data[i];
+        }
+    }
+    document.getElementById("legertekesebb").innerHTML = legertekesebbJatekos;
+}
+
 /* A játékosok életkorának kiszámítása */
 function CalculateAge(szulido)
 {
