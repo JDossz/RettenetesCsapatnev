@@ -1521,7 +1521,7 @@ function MinimumAge() {
     }
     return minimum;
 }
-
+ 
 
 //LEGMAGASABB JÁTÉKOSÉRTÉK
 function legertekesebb() {
