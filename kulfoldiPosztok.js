@@ -14,7 +14,6 @@ function kKapus() {
     }
     return poszt;
 }
-console.log(kKapus());
 
 
 
@@ -34,7 +33,6 @@ function kKozepcsatar() {
     }
     return poszt;
 }
-console.log(kKozepcsatar());
 
 //KÜLFÖLDI HÁTRAVONT CSATÁR
 function khcsatar() {
@@ -52,7 +50,6 @@ function khcsatar() {
     }
     return poszt;
 }
-console.log(khcsatar());
 
 //BAL SZÉLSŐ
 function kbszelso() {
@@ -70,7 +67,6 @@ function kbszelso() {
     }
     return poszt;
 }
-console.log(kbszelso());
 
 //JOBB SZÉLSŐ
 function kjszelso() {
@@ -88,7 +84,6 @@ function kjszelso() {
     }
     return poszt;
 }
-console.log(kjszelso());
 
 //TÁMADÓ KÖZÉPPÁLYÁS
 function ktkppalyas() {
@@ -106,7 +101,6 @@ function ktkppalyas() {
     }
     return poszt;
 }
-console.log(ktkppalyas());
 
 //BELSŐ KÖZÉPPÁLYÁS
 function kbpalyas() {
@@ -124,7 +118,6 @@ function kbpalyas() {
     }
     return poszt;
 }
-console.log(kbpalyas());
 
 //VÉDEKEZŐ KÖZÉPPÁLYÁS
 function kvkpalyas() {
@@ -142,7 +135,6 @@ function kvkpalyas() {
     }
     return poszt;
 }
-console.log(kvkpalyas());
 
 //JOBB OLDALI KÖZÉPPÁLYÁS
 function kjkpalyas() {
@@ -160,7 +152,6 @@ function kjkpalyas() {
     }
     return poszt;
 }
-console.log(kjkpalyas());
 
 //BAL OLDALI KÖZÉPPÁLYÁS
 function kbkpalyas() {
@@ -178,7 +169,6 @@ function kbkpalyas() {
     }
     return poszt;
 }
-console.log(kbkpalyas());
 
 //KÖZÉPSŐ VÉDŐ
 function kkpvedo() {
@@ -196,7 +186,6 @@ function kkpvedo() {
     }
     return poszt;
 }
-console.log(kkpvedo());
 
 //JOBB OLDALI VÉDŐ
 function kjvedo() {
@@ -214,7 +203,6 @@ function kjvedo() {
     }
     return poszt;
 }
-console.log(kjvedo());
 
 //BAL OLDALI VÉDŐ
 function kbvedo() {
@@ -232,4 +220,17 @@ function kbvedo() {
     }
     return poszt;
 }
-console.log(kbvedo());
+
+console.log('Külföldi kapus ', kKapus());
+console.log('Külföldi középcsatár ', kKozepcsatar());
+console.log('Külföldi hátravont csatár ', khcsatar());
+console.log('Külföldi bal szélső ', kbszelso());
+console.log('Külföldi jobb szélső ', kjszelso());
+console.log('Külföldi támadó középpályás ', ktkppalyas());
+console.log('Külföldi belső középpályás ', kbpalyas());
+console.log('Külföldi védekező középpályás ', kvkpalyas());
+console.log('Külföldi jobb oldali középpályás ', kjkpalyas());
+console.log('Külföldi bal oldali középpályás ', kbkpalyas());
+console.log('Külföldi középső védő ', kkpvedo());
+console.log('Külföldi jobb oldali védő ', kjvedo());
+console.log('Külföldi bal oldali védő ', kbvedo());

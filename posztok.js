@@ -179,3 +179,16 @@ function bvedo() {
     }
     return poszt;
 }
+console.log('Kapusok ', kapusok());
+console.log('Középcsatárok ', kpcsatar());
+console.log('Hátravont csatárok ', hcsatar());
+console.log('Bal szélsők ', bszelso());
+console.log('Jobb szélsők ', jszelso());
+console.log('Támadó középpályások ', tkppalyas());
+console.log('Belső középpályások ', bpalyas());
+console.log('Védekező középpályások ', vkpalyas());
+console.log('Jobb oldali középpályások ', jkpalyas());
+console.log('Bal oldali középpályások ', bkpalyas());
+console.log('Középső védő ', kpvedo());
+console.log('Jobb oldali védők ', jvedo());
+console.log('Bal oldali védők ', bvedo());

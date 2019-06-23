@@ -803,3 +803,32 @@ function atlagFelettiErtekJVedo() {
 
     return atlagFelettDragak;
 }
+
+console.log('Játékosok átlagos értéke ', atlag());
+console.log('Átlag feletti értékű játékosok ', atlagFelettiErtek());
+console.log('Átlagérték kapusok ', atlagertekKapus());
+console.log('Átlagérték középcsatárok ', atlagertekKozepcsatar());
+console.log('Átlagérték hátravont csatárok ', atlagertekHCsatar());
+console.log('Átlagérték bal szélsők ', atlagertekBalszelso());
+console.log('Átlagérték jobb szélsők ', atlagertekJobbszelso());
+console.log('Átlagérték támadó középpályások ', atlagertekTamadokpalyas());
+console.log('Átlagérték belső középpályás ', atlagertekBelsokpalyas());
+console.log('Átlagérték védekező középpályás ', atlagertekVedekezokpalyas());
+console.log('Átlagérték jobb oldali középpályás ', atlagertekJobbOldalikpalyas());
+console.log('Átlagérték bal oldali középpályás ', atlagertekBalOldalikpalyas());
+console.log('Átlagérték középső védő ', atlagertekKozepsoVedo());
+console.log('Átlagérték bal oldali védő ', atlagertekBalOldaliVedo());
+console.log('Átlagérték jobb oldali védő ', atlagertekJobbOldaliVedo());
+console.log('Átlag feletti érték kapus ', atlagFelettiErtekKapus());
+console.log('Átlag feletti érték középcsatár ', atlagFelettiErtekKozepcsatar());
+console.log('Átlag feletti érték hátravont csatár ', atlagFelettiErtekHcsatar());
+console.log('Átlag feletti érték bal szélső ', atlagFelettiErtekBalszelso());
+console.log('Átlag feletti érték jobb szélső ', atlagFelettiErtekJobbszelso());
+console.log('Átlag feletti érték támadó középpályás ', atlagFelettiErtekTKpalyas());
+console.log('Átlag feletti érték bal oldali középpályás ', atlagFelettiErtekBKpalyas());
+console.log('Átlag feletti érték védekező középpályás ', atlagFelettiErtekVpalyas());
+console.log('Átlag feletti érték jobb oldali középpályás ', atlagFelettiErtekJobbKpalyas());
+console.log('Átlag feletti érték bal oldali középpályás ', atlagFelettiErtekBalKpalyas());
+console.log('Átlag feletti érték középső védő ', atlagFelettiErtekKpVedo());
+console.log('Átlag feletti érték bal oldali védő ', atlagFelettiErtekBVedo());
+console.log('Átlag feletti érték jobb oldali védő ', atlagFelettiErtekJVedo());

@@ -204,3 +204,18 @@ function kulfoldiKapusokIdosebbMint(atLeastAge) {
     }
     return kulkapus;
 }
+
+console.log('Teljes név ', teljesNev());
+console.log('Teljes név és kor ', nevKor());
+console.log('Kor ', kor(data[0]));
+console.log('Születésnapok névsorrendben ', szuletesnap());
+console.log('Teljes név és születésnap ', szuletesnap());
+console.log('Kor szerint növekvő sorrend ', korSzerintNovekvo());
+console.log('Külföldi játékosok ', kulfoldi());
+console.log('Magyar játékosok ', magyar());
+console.log('Kettős állampolgárok ', kettos());
+console.log('Klubok ', csapatok());
+console.log('Játékosok klubonként ', jatekosokACsapatokban());
+console.log('Legfiatalabb játékos ', MinimumAge());
+console.log('Legértékesebb játékos ', legertekesebb());
+console.log('Külföldi játékosok, akik idősebbek, mint ', kulfoldiKapusokIdosebbMint(30));

@@ -174,3 +174,18 @@ function erteksorrendBVedo() {
     }
     return poszt;
 }
+
+console.log('Játékosok értéksorrendje', erteksorrend());
+console.log('Kapus értéksorrend', erteksorrendKapus());
+console.log('Középcsatár értéksorrend', erteksorrendKozepcsatar());
+console.log('Hátravont csatár értéksorrend ', erteksorrendHcsatar());
+console.log('Bal szélső értéksorrend ', erteksorrendBszelso());
+console.log('Jobb szélső értéksorrend ', erteksorrendJszelso());
+console.log('Támadó középpályás értéksorrend ', erteksorrendTKpalyas());
+console.log('Belső középpályás értéksorrend ', erteksorrendbKpalyas());
+console.log('Védekező középpályás értéksorrend ', erteksorrendVKpalyas());
+console.log('Jobb oldali középpályás értéksorrend ', erteksorrendJKpalyas());
+console.log('Bal oldali középpályás értéksorrend ', erteksorrendBKpalyas());
+console.log('Középső védő értéksorrend ', erteksorrendKVedo());
+console.log('Jobb oldali védő értéksorrend ', erteksorrendJVedo());
+console.log('Bal oldali védő értéksorrend ', erteksorrendBVedo());
