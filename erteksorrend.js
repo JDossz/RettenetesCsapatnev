@@ -16,7 +16,6 @@ function erteksorrend() {
     }
     return erteksor;
 }
-console.log(erteksorrend());
 
 //ÉRTÉKSORREND KAPUS
 function erteksorrendKapus() {
@@ -30,7 +29,6 @@ function erteksorrendKapus() {
     }
     return poszt;
 }
-console.log(erteksorrendKapus());
 
 //ÉRTÉKSORREND KÖZÉPCSATÁR
 function erteksorrendKozepcsatar() {
@@ -43,7 +41,6 @@ function erteksorrendKozepcsatar() {
     }
     return poszt;
 }
-console.log(erteksorrendKozepcsatar());
 
 //HÁTRAVONT CSATÁR
 function erteksorrendHcsatar() {
@@ -56,7 +53,6 @@ function erteksorrendHcsatar() {
     }
     return poszt;
 }
-console.log(erteksorrendHcsatar());
 
 //BAL SZÉLSŐ
 function erteksorrendBszelso() {
@@ -69,7 +65,6 @@ function erteksorrendBszelso() {
     }
     return poszt;
 }
-console.log(erteksorrendBszelso());
 
 //JOBB SZÉLSŐ
 function erteksorrendJszelso() {
@@ -82,7 +77,6 @@ function erteksorrendJszelso() {
     }
     return poszt;
 }
-console.log(erteksorrendJszelso());
 
 //TÁMADÓ KÖZÉPPÁLYÁS
 function erteksorrendTKpalyas() {
@@ -95,10 +89,9 @@ function erteksorrendTKpalyas() {
     }
     return poszt;
 }
-console.log(erteksorrendTKpalyas());
 
 //BELSŐ KÖZÉPPÁLYÁS
-function erteksorrendBKpalyas() {
+function erteksorrendbKpalyas() {
     var es = erteksorrend();
     var poszt = [];
     for (var i = 0; i < es.length; i++) {
@@ -108,7 +101,6 @@ function erteksorrendBKpalyas() {
     }
     return poszt;
 }
-console.log(erteksorrendBKpalyas());
 
 
 //VÉDEKEZŐ KÖZÉPPÁLYÁS
@@ -122,7 +114,6 @@ function erteksorrendVKpalyas() {
     }
     return poszt;
 }
-console.log(erteksorrendVKpalyas());
 
 //JOBB OLDALI KÖZÉPPÁLYÁS
 function erteksorrendJKpalyas() {
@@ -135,7 +126,6 @@ function erteksorrendJKpalyas() {
     }
     return poszt;
 }
-console.log(erteksorrendJKpalyas());
 
 //BAL OLDALI KÖZÉPPÁLYÁS
 function erteksorrendBKpalyas() {
@@ -148,7 +138,6 @@ function erteksorrendBKpalyas() {
     }
     return poszt;
 }
-console.log(erteksorrendBKpalyas());
 
 //KÖZÉPSŐ VÉDŐ
 function erteksorrendKVedo() {
@@ -161,7 +150,6 @@ function erteksorrendKVedo() {
     }
     return poszt;
 }
-console.log(erteksorrendKVedo());
 
 //JOBB OLDALI VÉDŐ
 function erteksorrendJVedo() {
@@ -174,7 +162,6 @@ function erteksorrendJVedo() {
     }
     return poszt;
 }
-console.log(erteksorrendJVedo());
 
 //BAL OLDALI VÉDŐ
 function erteksorrendBVedo() {
@@ -187,4 +174,3 @@ function erteksorrendBVedo() {
     }
     return poszt;
 }
-console.log(erteksorrendBVedo());

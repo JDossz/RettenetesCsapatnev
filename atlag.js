@@ -12,7 +12,7 @@ function atlag() {
     }
     return (atlag);
 }
-console.log(atlag());
+
 
 //ÁTLAG FELETTI ÉRTÉK
 function atlagFelettiErtek() {
@@ -41,7 +41,7 @@ function atlagFelettiErtek() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtek());
+
 
 //ÁTLAGÉRTÉK KAPUS
 
@@ -70,7 +70,7 @@ function atlagertekKapus() {
 
     return kapusatlag;
 }
-console.log(atlagertekKapus());
+
 
 //ÁTLAGÉRTÉK KÖZÉPCSATÁR
 
@@ -99,7 +99,7 @@ function atlagertekKozepcsatar() {
 
     return atlag;
 }
-console.log(atlagertekKozepcsatar());
+
 
 //ÁTLAGÉRTÉK HÁTRAVONT CSATÁR
 
@@ -128,7 +128,7 @@ function atlagertekHCsatar() {
 
     return atlag;
 }
-console.log(atlagertekHCsatar());
+
 
 //ÁTLAGÉRTÉK BAL SZÉLSŐ
 
@@ -157,7 +157,7 @@ function atlagertekBalszelso() {
 
     return atlag;
 }
-console.log(atlagertekBalszelso());
+
 
 //ÁTLAGÉRTÉK JOBB SZÉLSŐ
 
@@ -186,7 +186,7 @@ function atlagertekJobbszelso() {
 
     return atlag;
 }
-console.log(atlagertekJobbszelso());
+
 
 //ÁTLAGÉRTÉK TÁMADÓ KÖZÉPPÁLYÁS
 
@@ -215,7 +215,7 @@ function atlagertekTamadokpalyas() {
 
     return atlag;
 }
-console.log(atlagertekTamadokpalyas());
+
 
 //ÁTLAGÉRTÉK BELSŐ KÖZÉPPÁLYÁS
 
@@ -244,7 +244,7 @@ function atlagertekBelsokpalyas() {
 
     return atlag;
 }
-console.log(atlagertekBelsokpalyas());
+
 
 //ÁTLAGÉRTÉK VÉDEKEZŐ KÖZÉPPÁLYÁS
 
@@ -273,7 +273,7 @@ function atlagertekVedekezokpalyas() {
 
     return atlag;
 }
-console.log(atlagertekVedekezokpalyas());
+
 
 //ÁTLAGÉRTÉK JOBB OLDALI KÖZÉPPÁLYÁS
 
@@ -302,7 +302,7 @@ function atlagertekJobbOldalikpalyas() {
 
     return atlag;
 }
-console.log(atlagertekJobbOldalikpalyas());
+
 
 //ÁTLAGÉRTÉK BAL OLDALI KÖZÉPPÁLYÁS
 
@@ -331,7 +331,7 @@ function atlagertekBalOldalikpalyas() {
 
     return atlag;
 }
-console.log(atlagertekBalOldalikpalyas());
+
 
 //ÁTLAGÉRTÉK KÖZÉPSŐ VÉDŐ
 
@@ -360,7 +360,7 @@ function atlagertekKozepsoVedo() {
 
     return atlag;
 }
-console.log(atlagertekKozepsoVedo());
+
 
 //ÁTLAGÉRTÉK BAL OLDALI VÉDŐ
 
@@ -389,7 +389,7 @@ function atlagertekBalOldaliVedo() {
 
     return atlag;
 }
-console.log(atlagertekBalOldaliVedo());
+
 
 //ÁTLAGÉRTÉK JOBB OLDALI VÉDŐ
 
@@ -418,7 +418,7 @@ function atlagertekJobbOldaliVedo() {
 
     return atlag;
 }
-console.log(atlagertekJobbOldaliVedo());
+
 
 //ÁTLAG FELETTI ÉRTÉK KAPUS
 function atlagFelettiErtekKapus() {
@@ -448,7 +448,7 @@ function atlagFelettiErtekKapus() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekKapus());
+
 
 //ÁTLAG FELETTI ÉRTÉK KÖZÉPCSATÁR
 function atlagFelettiErtekKozepcsatar() {
@@ -478,7 +478,7 @@ function atlagFelettiErtekKozepcsatar() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekKozepcsatar());
+
 
 //ÁTLAG FELETTI ÉRTÉK HÁTRAVONT CSATÁR
 function atlagFelettiErtekHcsatar() {
@@ -508,7 +508,7 @@ function atlagFelettiErtekHcsatar() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekHcsatar());
+
 
 //ÁTLAG FELETTI ÉRTÉK BAL SZÉLSŐ
 function atlagFelettiErtekBalszelso() {
@@ -538,7 +538,7 @@ function atlagFelettiErtekBalszelso() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekBalszelso());
+
 
 //ÁTLAG FELETTI ÉRTÉK JOBB SZÉLSŐ
 function atlagFelettiErtekJobbszelso() {
@@ -568,7 +568,6 @@ function atlagFelettiErtekJobbszelso() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekJobbszelso());
 
 //ÁTLAG FELETTI ÉRTÉK TÁMADÓ KÖZÉPPÁLYÁS
 function atlagFelettiErtekTKpalyas() {
@@ -598,38 +597,7 @@ function atlagFelettiErtekTKpalyas() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekTKpalyas());
 
-
-//ÁTLAG FELETTI ÉRTÉK TÁMADÓ KÖZÉPPÁLYÁS
-function atlagFelettiErtekBKpalyas() {
-    var atlagFelettDragak = [];
-    var at = atlagertekBelsokpalyas();
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].ertek > at && data[i].poszt == "belső középpályás") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.ertek = data[i].ertek;
-            obj.poszt;
-
-            atlagFelettDragak.push(obj);
-        }
-    }
-    for (var i = 0; i < atlagFelettDragak.length - 1; i++) {
-        for (var j = i + 1; j < atlagFelettDragak.length; j++) {
-            if (atlagFelettDragak[i].ertek > atlagFelettDragak[j].ertek) {
-                var tmp = [atlagFelettDragak[i], atlagFelettDragak[j]];
-                tmp[0] = atlagFelettDragak[i];
-                tmp[1] = atlagFelettDragak[j];
-
-            }
-        }
-    }
-
-
-    return atlagFelettDragak;
-}
-console.log(atlagFelettiErtekBKpalyas());
 
 //ÁTLAG FELETTI ÉRTÉK BELSŐ KÖZÉPPÁLYÁS
 function atlagFelettiErtekBKpalyas() {
@@ -659,7 +627,6 @@ function atlagFelettiErtekBKpalyas() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekBKpalyas());
 
 
 
@@ -691,7 +658,6 @@ function atlagFelettiErtekVpalyas() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekVpalyas());
 
 //ÁTLAG FELETTI ÉRTÉK JOBB OLDALI KÖZÉPPÁLYÁS
 function atlagFelettiErtekJobbKpalyas() {
@@ -721,7 +687,6 @@ function atlagFelettiErtekJobbKpalyas() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekJobbKpalyas());
 
 //ÁTLAG FELETTI ÉRTÉK BAL OLDALI KÖZÉPPÁLYÁS
 function atlagFelettiErtekBalKpalyas() {
@@ -751,7 +716,6 @@ function atlagFelettiErtekBalKpalyas() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekBalKpalyas());
 
 //ÁTLAG FELETTI ÉRTÉK KÖZÉPSŐ VÉDŐ
 function atlagFelettiErtekKpVedo() {
@@ -781,7 +745,6 @@ function atlagFelettiErtekKpVedo() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekKpVedo());
 
 //ÁTLAG FELETTI ÉRTÉK BAL OLDALI VÉDŐ
 function atlagFelettiErtekBVedo() {
@@ -811,7 +774,6 @@ function atlagFelettiErtekBVedo() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekBVedo());
 
 //ÁTLAG FELETTI ÉRTÉK JOBB OLDALI VÉDŐ
 function atlagFelettiErtekJVedo() {
@@ -841,4 +803,3 @@ function atlagFelettiErtekJVedo() {
 
     return atlagFelettDragak;
 }
-console.log(atlagFelettiErtekJVedo());

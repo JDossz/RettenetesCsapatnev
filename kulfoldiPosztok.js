@@ -1,181 +1,235 @@
-//KAPUS
-function kapusok() {
+//KÜLFÖLDI KAPUSOK
+function kKapus() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "kapus") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
+        if (data[i].poszt == "kapus" && data[i].kulfoldi == true) {
 
-//KÖZÉPCSATÁR
-function kpcsatar() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "középcsatár") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
 
-//HÁTRAVONT CSATÁR
-function hcsatar() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "hátravont csatár") {
-            obj = {};
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kKapus());
+
+
+
+//KÜLFÖLDI KÖZÉPCSATÁR
+function kKozepcsatar() {
+    var poszt = [];
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "középcsatár" && data[i].kulfoldi == true) {
+
+
+            obj = {}
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            obj.kulföldi = true;
+            poszt.push(obj);
+        }
+    }
+    return poszt;
+}
+console.log(kKozepcsatar());
+
+//KÜLFÖLDI HÁTRAVONT CSATÁR
+function khcsatar() {
+    var poszt = [];
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "hátravont csatár" && data[i].kulfoldi == true) {
+
+
+            obj = {}
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            obj.kulföldi = true;
+            poszt.push(obj);
+        }
+    }
+    return poszt;
+}
+console.log(khcsatar());
 
 //BAL SZÉLSŐ
-function bszelso() {
+function kbszelso() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "bal szélső") {
-            obj = {};
+        if (data[i].poszt == "bal szélső" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kbszelso());
 
 //JOBB SZÉLSŐ
-function jszelso() {
+function kjszelso() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "jobb szélső") {
-            obj = {};
+        if (data[i].poszt == "jobb szélső" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kjszelso());
 
 //TÁMADÓ KÖZÉPPÁLYÁS
-function tkppalyas() {
+function ktkppalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "támadó középpályás") {
-            obj = {};
+        if (data[i].poszt == "támadó középpályás" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(ktkppalyas());
 
 //BELSŐ KÖZÉPPÁLYÁS
-function bpalyas() {
+function kbpalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "belső középpályás") {
-            obj = {};
+        if (data[i].poszt == "belső középpályás" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kbpalyas());
 
 //VÉDEKEZŐ KÖZÉPPÁLYÁS
-function vkpalyas() {
+function kvkpalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "védekező középpályás") {
-            obj = {};
+        if (data[i].poszt == "védekező középpályás" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kvkpalyas());
 
 //JOBB OLDALI KÖZÉPPÁLYÁS
-function jkpalyas() {
+function kjkpalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "jobb oldali középpályás") {
-            obj = {};
+        if (data[i].poszt == "jobb oldali középpályás" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kjkpalyas());
 
 //BAL OLDALI KÖZÉPPÁLYÁS
-function bkpalyas() {
+function kbkpalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "bal oldali középpályás") {
-            obj = {};
+        if (data[i].poszt == "bal oldali középpályás" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kbkpalyas());
 
 //KÖZÉPSŐ VÉDŐ
-function kpvedo() {
+function kkpvedo() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "középső védő") {
-            obj = {};
+        if (data[i].poszt == "középső védő" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kkpvedo());
 
 //JOBB OLDALI VÉDŐ
-function jvedo() {
+function kjvedo() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "jobb oldali védő") {
-            obj = {};
+        if (data[i].poszt == "jobb oldali védő" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kjvedo());
 
 //BAL OLDALI VÉDŐ
-function bvedo() {
+function kbvedo() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "bal oldali védő") {
-            obj = {};
+        if (data[i].poszt == "bal oldali védő" && data[i].kulfoldi == true) {
+
+
+            obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
+            obj.kulföldi = true;
             poszt.push(obj);
         }
     }
     return poszt;
 }
+console.log(kbvedo());

@@ -1,6 +1,5 @@
 //NÉVSORREND+KOR
 
-console.log(data)
 
 function nevKor() {
     var kor = -99;
@@ -18,16 +17,16 @@ function nevKor() {
     }
     return fullNevKor;
 }
-console.log(nevKor());
+
 
 
 //KOR
 function kor(item) {
     return new Date(new Date() - new Date(item.szulido)).getFullYear() - 1970;
 }
-console.log(kor(data[0]));
 
-//3. TELJES NÉV
+
+//TELJES NÉV
 function teljesNev() {
     var fullName = [];
     for (var i = 0; i < data.length; i++) {
@@ -39,7 +38,7 @@ function teljesNev() {
     }
     return fullName;
 }
-console.log(teljesNev());
+
 
 //SZÜLETÉSNAPOK NÉVSORRENDBEN
 function szuletesnap() {
@@ -54,7 +53,7 @@ function szuletesnap() {
     }
     return fullNevSzulinap;
 }
-console.log(szuletesnap());
+
 
 //SZÜLETÉSNAP SZERINTI RENDEZÉS
 function korSzerintNovekvo() {
@@ -75,7 +74,7 @@ function korSzerintNovekvo() {
 /* if (lista[i].szulinapok.getFullYear() < lista[j].szulinapok.getFullYear()) 
  ha nincs ott a getfullyear, akkor nem rendeződik sorba a Date függvénnyel rendezett szuletési dátum lista*/
 
-console.log(korSzerintNovekvo());
+
 
 
 //KÜLFÖLDI JÁTÉKOSOK
@@ -91,7 +90,7 @@ function kulfoldi() {
     }
     return kulfoldiek;
 }
-console.log(kulfoldi());
+
 
 //MAGYAR JÁTÉKOSOK
 function magyar() {
@@ -121,7 +120,7 @@ function kettos() {
     }
     return kettos;
 }
-console.log(kettos());
+
 
 //KLUBOK
 function csapatok() {
@@ -133,7 +132,7 @@ function csapatok() {
     }
     return csapat;
 }
-console.log(csapatok());
+
 
 //JÁTÉKOSOK KLUBONKÉNT
 function jatekosokACsapatokban() {
@@ -158,7 +157,7 @@ function jatekosokACsapatokban() {
 
     return csapatresult;
 }
-console.log(jatekosokACsapatokban());
+
 
 //LEGFIATALABB JÁTÉKOS
 function MinimumAge() {
@@ -176,7 +175,7 @@ function MinimumAge() {
     }
     return minimum;
 }
-console.log(MinimumAge());
+
 
 //LEGMAGASABB JÁTÉKOSÉRTÉK
 function legertekesebb() {
@@ -191,7 +190,7 @@ function legertekesebb() {
     }
     return legertekesebb;
 }
-console.log(legertekesebb());
+
 
 //KÜLFÖLDI KAPUSOK, AKIK IDŐSEBBEK, MINT();
 function kulfoldiKapusokIdosebbMint(atLeastAge) {
@@ -205,4 +204,3 @@ function kulfoldiKapusokIdosebbMint(atLeastAge) {
     }
     return kulkapus;
 }
-console.log(kulfoldiKapusokIdosebbMint(30));
