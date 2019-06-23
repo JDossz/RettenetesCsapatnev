@@ -84,12 +84,12 @@ function Legidosebb()
         if (CalculateAge(data[i].szulido) > legIdosebbJatekosAge)
         {
             legIdosebbJatekosAge = CalculateAge(data[i].szulido);
-        legidosebb = ('A legidősebb játékos ' + data[i].vezeteknev + ' ' + data[i].utonev ', Ő ' + legIdosebbJatekosAge + ' éves, a születési éve pedig ' + data[i].szulido);
-    }
+            legidosebb = 'A legidősebb játékos ' + data[i].vezeteknev + ' ' + data[i].utonev + ', Ő ' + legIdosebbJatekosAge + ' éves, a születési éve pedig ' + data[i].szulido
+        }
     }
     document.getElementById("legidosebb").innerHTML = legidosebb;
     return legidosebb; //??? hol fut, hol nem, és nem értem, miért
-};
+}
 console.log('Legidősebb játékos: ' + Legidosebb());
 
 // A legfiatalabb játékos:
@@ -102,12 +102,13 @@ function Legfiatalabb()
         if (CalculateAge(data[i].szulido) < legFiatalabbJatekosAge)
         {
             legFiatalabbJatekosAge = CalculateAge(data[i].szulido);
-          legfiatalabb = ('A legfiatalabb játékos ' + data[i].vezeteknev + ' ' + data[i].utonev '. Ő ' + legFiatalabbJatekosAge + ' éves, a születési éve pedig ' + data[i].szulido);
+            legfiatalabb = 'A legfiatalabb játékos ' + data[i].vezeteknev + ' ' + data[i].utonev + ', Ő ' + legFiatalabbJatekosAge + ' éves, a születési éve pedig ' + data[i].szulido
         }
-        document.getElementById("legfiatalabb").innerHTML = legfiatalabb;
-        return legfiatalabb; //??? hol fut, hol nem, és nem értem, miért
-    };
-    console.log('Legidősebb játékos: ' + Legfiatalabb());
+    }
+    document.getElementById("legfiatalabb").innerHTML = legfiatalabb;
+    return legfiatalabb; //??? hol fut, hol nem, és nem értem, miért
+}
+console.log('Legfiatalabb játékos: ' + Legfiatalabb());
     
 //Magyar játékosok listája:
 function Magyarok()
@@ -122,7 +123,7 @@ function Magyarok()
     }
     document.getElementById("magyarok").innerHTML = magyarok;
 }
-console.log('Magyarok: ' + Magyarok());
+// console.log('Magyarok: ' + Magyarok());
 //--> ezt atért kell kivenni, hogy ne jelenjen meg azonnal az érték
     
 //Külföldi játékosok listája:
@@ -138,5 +139,5 @@ function Kulfoldiek()
     }
     document.getElementById("kulfoldiek").innerHTML = kulfoldiek;
 }
-console.log('Külföldiek: ' + Kulfoldiek());
+// console.log('Külföldiek: ' + Kulfoldiek());
 //--> ezt atért kell kivenni, hogy ne jelenjen meg azonnal az érték
