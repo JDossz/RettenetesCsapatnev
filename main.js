@@ -1,203 +1,208 @@
+//NÉVSORREND+KOR
 
+console.log(data)
 
-
-function AllGoals()
-{
-    var result = 0;
-    for (var i = 0; i < players.length; i++)
-    {
-        result += parseInt(players[i].goals);
-    }
-    return result;
-}
-//---------------------------------------------------------
-function DateFormatter(furcsaForma)
-{
-    var result = '';
-    var arr = furcsaForma.split('/')
-    result = arr[2] + '-' + arr[1] + '-' + arr[0];
-    return result;
-}
-
-/*
-function CalculateAge(birthdate)
-{
-    var age = -99;
+function nevKor() {
+    var kor = -99;
     var dtToday = new Date();
-    var dtBirthdate = new Date(birthdate);
-    age = dtToday.getFullYear() - dtBirthdate.getFullYear();
-    return age; 
-}
-*/
+    var fullNevKor = [];
 
-function CalculateAge(birthdate)
-{
-    var age = -99;
-    var dtToday = new Date();
-    var dtBirthdate = new Date(DateFormatter(birthdate));
-    age = dtToday.getFullYear() - dtBirthdate.getFullYear();
-    return age; 
-}
+    for (var i = 0; i < data.length; i++) {
+        var obj = {};
+        var szuldate = new Date(data[i].szulido);
+        kor = new Date(dtToday - szuldate).getFullYear() - 1970;
+        obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+        obj.kor = kor;
+        fullNevKor.push(obj);
 
-function MinimumAge()
-{
-    var min = CalculateAge(players[0].birthdate);
-    for (var i = 0; i < players.length; i++)
-    {
-        if (min > CalculateAge(players[i].birthdate))
-        {
-            min = CalculateAge(players[i].birthdate);
-        }
     }
-    return min;
+    return fullNevKor;
 }
-//---------------------------------------------------------
-function MaximumAge()
-{
-    var max = CalculateAge(players[0].birthdate);
-    for (var i = 0; i < players.length; i++)
-    {
-        if (max < CalculateAge(players[i].birthdate))
-        {
-            max = CalculateAge(players[i].birthdate);
-        }
-    }
-    return max;
-}
-//---------------------------------------------------------
-function AverageAge()
-{
-    var sumAge = 0;
-    var numberOfPlayers = 0;
-    for (var i = 0; i < players.length; i++)
-    {
-        sumAge += CalculateAge(players[i].birthdate);
-        numberOfPlayers++;
-    }
-    var averge = sumAge / numberOfPlayers;
-    return averge;
-}
+console.log(nevKor());
 
-function OldestPlayer()
-{
-    var oldest = players[0];
-    for (var i = 0; i < players.length; i++)
-    {
-        if (CalculateAge(oldest.birthdate) < CalculateAge(players[i].birthdate))
-        {
-            oldest = players[i];
-        }
-    }
-    return oldest;
-}
 
-function Goalkeepers()
-{
-    var result = [];
-    for (var i = 0; i < players.length; i++)
-    {
-        if (players[i].position == 'Goalkeeper')
-        {
-            result.push(players[i].name);
-        }
-    }
-    return result;
+//KOR
+function kor(item) {
+    return new Date(new Date() - new Date(item.szulido)).getFullYear() - 1970;
 }
+console.log(kor(data[0]));
 
-function HasPlayerFromClub(pClubName)
-{
-    var result = false;
-    for (var i = 0; i < players.length; i++)
-    {
-        if (players[i].club.indexOf(pClubName) != -1) // az .indexOf() visszaadja a megfelelő értékek indexét (ha nincs benne keresett kifejezés, akkor -1)
-        {
-            result = true;
-            break;
-        }
+//3. TELJES NÉV
+function teljesNev() {
+    var fullName = [];
+    for (var i = 0; i < data.length; i++) {
+        obj = {};
+        obj.fullName = data[i].vezeteknev + ' ' + data[i].utonev;
+        fullName.push(obj);
+        //fullName.push(data[i].vezeteknev + data[i].utonev);
+
     }
-    return result;
+    return fullName;
 }
+console.log(teljesNev());
 
-function HasPlayerWithName(pPlayerName)
-{
-    var result = false;
-    for (var i = 0; i < players.length; i++)
-    {
-        if (players[i].name.indexOf(pPlayerName) != -1)
-        {
-            result = true;
-            break;
-        }
+//SZÜLETÉSNAPOK NÉVSORRENDBEN
+function szuletesnap() {
+    var fullNevSzulinap = [];
+    var szulinap = new Date(data[0].szulido);
+
+    for (var i = 0; i < data.length; i++) {
+        obj = {};
+        obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+        obj.szulinapok = new Date(data[i].szulido);
+        fullNevSzulinap.push(obj);
     }
-    return result;
+    return fullNevSzulinap;
 }
+console.log(szuletesnap());
 
-function FirstPlayerWithName(pPlayerName)
-{
-    var result = players[0];
-    for (var i = 0; i < players.length; i++)
-    {
-        if (players[i].name.indexOf(pPlayerName) != -1)
-        {
-            result = players[i];
-            break;
-        }
-    }
-    return result;
-}
-
-function PlayersWithName(pPlayerName)
-{
-    var result = [];
-    for (var i = 0; i < players.length; i++)
-    {
-        if (players[i].name.indexOf(pPlayerName) != -1)
-        {
-            result.push(players[i]);
-        }
-    }
-    return result;
-}
-
-function ClubsRepresented()
-{
-    var result = [];
-    for (var i = 0; i < players.length; i++)
-    {
-        if (result.indexOf(players[i].club) == -1)
-        {
-            result.push(players[i].club);
-        }
-    }
-    return result;
-}
-
-function PlayersByClub()
-{
-    var result = [];
-    var clubs = ClubsRepresented(); // itt a függvény visszatérési értéke lesz a változóba betárolva
-    var player;
-    for (var i = 0; i < players.length; i++)
-    {
-        result.push(
-            {
-                name: clubs[i],
-                players: []
+//SZÜLETÉSNAP SZERINTI RENDEZÉS
+function korSzerintNovekvo() {
+    var lista = szuletesnap();
+    for (var i = 0; i < lista.length - 1; i++) {
+        for (var j = i + 1; j < lista.length; j++) {
+            if (lista[i].szulinapok.getFullYear() < lista[j].szulinapok.getFullYear()) {
+                var tmp = [lista[i], lista[j]];
+                lista[i] = tmp[1];
+                lista[j] = tmp[0];
             }
-        );
+
+        }
+
     }
-    for (var i = 0; i < players.length; i++) 
-    {
-        player = players[i];
-        for (var j = 0; j < players.length; j++)
-        {
-            if (result[j].name === player.club)
-            {
-                result[j].players.push(player);
+    return lista;
+}
+/* if (lista[i].szulinapok.getFullYear() < lista[j].szulinapok.getFullYear()) 
+ ha nincs ott a getfullyear, akkor nem rendeződik sorba a Date függvénnyel rendezett szuletési dátum lista*/
+
+console.log(korSzerintNovekvo());
+
+
+//KÜLFÖLDI JÁTÉKOSOK
+function kulfoldi() {
+    var kulfoldiek = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = {};
+        if (data[i].kulfoldi == true) {
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev
+            kulfoldiek.push(obj);
+
+        }
+    }
+    return kulfoldiek;
+}
+console.log(kulfoldi());
+
+//MAGYAR JÁTÉKOSOK
+function magyar() {
+    var magyarok = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = {};
+        if (data[i].magyar == true) {
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev
+            magyarok.push(obj);
+
+        }
+    }
+    return magyarok;
+}
+console.log(magyar());
+
+//KETTŐS ÁLLAMPOLGÁROK
+function kettos() {
+    var kettos = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = {};
+        if (data[i].magyar == true && data[i].kulfoldi == true) {
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev
+            kettos.push(obj);
+
+        }
+    }
+    return kettos;
+}
+console.log(kettos());
+
+//KLUBOK
+function csapatok() {
+    var csapat = [];
+    for (var i = 0; i < data.length; i++) {
+        if (csapat.indexOf(data[i].klub) == -1) {
+            csapat.push(data[i].klub);
+        }
+    }
+    return csapat;
+}
+console.log(csapatok());
+
+//JÁTÉKOSOK KLUBONKÉNT
+function jatekosokACsapatokban() {
+    var csapatresult = [];
+    var csapat = csapatok();
+    var jatekos;
+    for (var i = 0; i < csapat.length; i++) {
+        csapatresult.push({
+            name: csapat[i],
+            jatekosok: []
+        });
+    }
+    for (var i = 0; i < data.length; i++) {
+        jatekos = data[i];
+        for (var j = 0; j < csapatresult.length; j++) {
+            if (csapatresult[j].name === data[i].klub) {
+                csapatresult[j].jatekosok.push(jatekos);
                 break;
             }
         }
     }
-    return result;
-}
 
+    return csapatresult;
+}
+console.log(jatekosokACsapatokban());
+
+//LEGFIATALABB JÁTÉKOS
+function MinimumAge() {
+    var nk = nevKor();
+    var minimum;
+
+    if (nk.length > 0) {
+        minimum = nk[0].kor
+    }
+
+    for (var i = 1; i < nk.length; i++) {
+        if (nk[i].kor < minimum) {
+            minimum = nk[i].kor
+        }
+    }
+    return minimum;
+}
+console.log(MinimumAge());
+
+//LEGMAGASABB JÁTÉKOSÉRTÉK
+function legertekesebb() {
+    var legertekesebb = data[0].ertek;
+
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].ertek > legertekesebb) {
+            legertekesebb = data[i].ertek;
+
+
+        }
+    }
+    return legertekesebb;
+}
+console.log(legertekesebb());
+
+//KÜLFÖLDI KAPUSOK, AKIK IDŐSEBBEK, MINT();
+function kulfoldiKapusokIdosebbMint(atLeastAge) {
+    var kulkapus = [];
+    for (var i = 0; i < data.length; i++) {
+
+        if (data[i].poszt == "kapus" && data[i].kulfoldi && kor(data[i]) > atLeastAge) {
+
+            kulkapus.push(data[i]);
+        }
+    }
+    return kulkapus;
+}
+console.log(kulfoldiKapusokIdosebbMint(30));
