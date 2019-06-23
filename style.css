@@ -22,10 +22,14 @@ html {
     cursor: pointer;
 }
 
-/* egyenlőre elengedem a képet, majd foglalkozom vele, ha lesz időnk */
+.nevKiemeles {
+    color: brown;
+}
+
+/* egyenlőre elengedem a képet, majd foglalkozom vele, ha lesz idő */
 /*
 header {
-    background-image: url("/img/dsBuffer.jpg");
+    background-image: url("../img/dsBuffer.jpg");
     opacity: 0.5;
 }
 */
@@ -34,9 +38,9 @@ header {
 
 
 
-/* egyenlőre elengedem a képet, majd foglalkozom vele, ha lesz időnk */
+/* egyenlőre elengedem a képet, majd foglalkozom vele, ha lesz idő */
 /*
 footer {
-    background-image: url("/img/labda.gif");
+    background-image: url("../img/labda.gif");
 }
 */
