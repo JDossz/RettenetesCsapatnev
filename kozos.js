@@ -1702,7 +1702,7 @@ function kulfoldiKapusokIdosebbMint(atLeastAge) {
     return kulkapus;
 }
 
-console.log('Teljes név ', teljesNev());
+// console.log('Teljes név ', teljesNev());
 console.log('Teljes név és kor ', nevKor());
 console.log('Kor ', kor(data[0]));
 console.log('Születésnapok névsorrendben ', szuletesnap());
