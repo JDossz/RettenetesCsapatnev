@@ -1713,9 +1713,9 @@ console.log('Magyar játékosok ', magyar());
 console.log('Kettős állampolgárok ', kettos());
 console.log('Klubok ', csapatok());
 console.log('Játékosok klubonként ', jatekosokACsapatokban());
-console.log('Legfiatalabb játékos ', MinimumAge());
+// console.log('Legfiatalabb játékos ', MinimumAge());
 console.log('Legértékesebb játékos ', legertekesebb());
-console.log('Külföldi játékosok, akik idősebbek, mint ', kulfoldiKapusokIdosebbMint(30));
+// console.log('Külföldi játékosok, akik idősebbek, mint ', kulfoldiKapusokIdosebbMint(30));
 
 console.log('Külföldi kapus ', kKapus());
 console.log('Külföldi középcsatár ', kKozepcsatar());
