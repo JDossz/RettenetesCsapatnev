@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="author" content="Rettenetes Csapatnév fejlesztői csoport">
+        <meta name="copyright" content="Rettenetes Csapatnév fejlesztői csoport">
+
+        <title>Sportstatisztikák Rettenetes Csapatnév tollából</title>
+        
+        <!--Formázás-->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <header>
+            <a name="top"></a>
+        </header>
+        <main>
+            <div>
+                <a name="dorka"></a>
+                <div>
+                    <h3>A játékosok összértéke:</h3>
+                    <p id="sumErtek">&nbsp;</p>
+                    <button onclick="SumErtek();">Számolj!</button>
+                </div>
+                <div>
+                    <h3>A magyar nemetiségű játékosok:</h3>
+                    <p id="magyarok">&nbsp;</p>
+                    <button onclick="Magyarok();">Megnyit</button>
+                </div>
+                <div>
+                    <h3>A külföldi játékosok:</h3>
+                    <p id="kulfoldiek">&nbsp;</p>
+                    <button onclick="Kulfoldiek();">Megnyit</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <a href="#top">Ugrás az oldal tetejére</a>
+        </footer>
+
+        <!--Scriptek-->
+        <script type="text/javascript" src="nb1.js"></script>
+        <script src="kozos.js"></script>
+    </body>
+</html>
