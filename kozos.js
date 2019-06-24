@@ -4,9 +4,9 @@ function GJatekosKoraSzamold(pszulido) {
     var aktualisDatum = new Date();
     var jatekosKora = aktualisDatum.getFullYear() - szuletesiIdo.getFullYear();
     return jatekosKora;
-  };
-  
-  function GLegIdosebbJatekosKora() {
+};
+
+function GLegIdosebbJatekosKora() {
     var result = '';
     var legIdosebbJatekosKora = GJatekosKoraSzamold(data[0].szulido);
     for (var i = 0; i < data.length; i++) {
@@ -17,9 +17,9 @@ function GJatekosKoraSzamold(pszulido) {
     }
   
     return result;
-  };
+};
   
-  function GLegFiatalabbJatekosKora() {
+function GLegFiatalabbJatekosKora() {
     var result = '';
     var legFiatalabbJatekosKora = GJatekosKoraSzamold(data[0].szulido);
     for (var i = 0; i < data.length; i++) {
@@ -29,9 +29,9 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return result;
-  };
+};
   
-  function GLegDragabbJatekosErteke() {
+function GLegDragabbJatekosErteke() {
     var legDragabbJatekosAra = data[0].ertek;
     for (var i = 0; i < data.length; i++) {
       if (data[i].ertek > legDragabbJatekosAra) {
@@ -39,9 +39,9 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return legDragabbJatekosAra;
-  };
+};
   
-  function GLegOlcsobbJatekosErteke() {
+function GLegOlcsobbJatekosErteke() {
     var legOlcsobbJatekosAra = data[0].ertek;
     for (var i = 0; i < data.length; i++) {
       if (data[i].ertek < legOlcsobbJatekosAra) {
@@ -49,9 +49,9 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return legOlcsobbJatekosAra;
-  };
+};
   
-  function GLegFiatalabbJatekosNeve() {
+function GLegFiatalabbJatekosNeve() {
     var result = "";
     var legFiatalabbJatekosSzulIdeje = new Date(data[0].szulido);
     for (var i = 0; i < data.length; i++) {
@@ -61,9 +61,9 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return result + ' ' + GJatekosKoraSzamold(legFiatalabbJatekosSzulIdeje) + ' éves';
-  };
+};
   
-  function GLegIdosebbJatekosNeve() {
+function GLegIdosebbJatekosNeve() {
     var result = "";
     var legIdosebbJatekosSzulIdeje = new Date(data[0].szulido);
     for (var i = 0; i < data.length; i++) {
@@ -73,9 +73,9 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return result + ' ' + GJatekosKoraSzamold(legIdosebbJatekosSzulIdeje) + ' éves';
-  };
+};
   
-  function GIlyenKlubokVannak() {
+function GIlyenKlubokVannak() {
     var klubok = [];
     for (var i = 0; i < data.length; i++) {
       if (klubok.indexOf(data[i].klub) === -1) {
@@ -83,17 +83,17 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return klubok;
-  };
+};
   
-  function GOsszesJatekosErteke() {
+function GOsszesJatekosErteke() {
     var jatekosokErteke = 0;
     for (var i = 0; i < data.length; i++) {
       jatekosokErteke += data[i].ertek;
     }
     return jatekosokErteke;
-  };
+};
   
-  function GJatekosokErtekAtlaga() {
+function GJatekosokErtekAtlaga() {
   
     var atlag = 0;
     var jatekosDarabSzam = 0;
@@ -104,9 +104,9 @@ function GJatekosKoraSzamold(pszulido) {
     }
     atlag = jatekosOsszeg / jatekosDarabSzam;
     return atlag;
-  };
+};
   
-  function GJatekosokKoranakAtlaga() {
+function GJatekosokKoranakAtlaga() {
     var jatekosDarab = 0;
     var jatekosEletkor = 0;
     var atlag = 0;
@@ -117,9 +117,9 @@ function GJatekosKoraSzamold(pszulido) {
     atlag = jatekosEletkor / jatekosDarab;
     atlag += ' év'
     return atlag;
-  };
+};
   
-  function GCsapataJatekosai(pCsapatnev) {
+function GCsapataJatekosai(pCsapatnev) {
     var jatekosok = [];
     var csapatNev = pCsapatnev;
     for (var i = 0; i < data.length; i++) {
@@ -128,9 +128,9 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return jatekosok;
-  };
+};
   
-  function GPosztJatekosai(pPoszt) {
+function GPosztJatekosai(pPoszt) {
     var mindenJatekosAKerdesesPoszton = [];
     var jatekosPosztja = pPoszt;
     for (var i = 0; i < data.length; i++) {
@@ -140,9 +140,9 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return mindenJatekosAKerdesesPoszton;
-  };
+};
   
-  function GLegHosszabbVezeteknev() {
+function GLegHosszabbVezeteknev() {
     var leghosszabbVezetekNevVar = data[0].vezeteknev;
     for (var i = 0; i < data.length; i++) {
       if (leghosszabbVezetekNevVar.length < data[i].vezeteknev.length) {
@@ -150,9 +150,9 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return leghosszabbVezetekNevVar;
-  }
+};
   
-  function GLegRovidebbVezeteknev() {
+function GLegRovidebbVezeteknev() {
     var legRovidebbVezetekNev = data[0].vezeteknev;
     for (var i = 0; i < data.length; i++) {
       if (legRovidebbVezetekNev.length > data[i].vezeteknev.length) {
@@ -160,9 +160,9 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return legRovidebbVezetekNev;
-  };
+};
   
-  function GMennyiBelaVan(pMibenKeres, pMitKeres) {
+function GMennyiBelaVan(pMibenKeres, pMitKeres) {
     var belakMennyisege = 0;
     var mitKeres = pMitKeres;
     var mibenKeres = pMibenKeres;
@@ -173,9 +173,9 @@ function GJatekosKoraSzamold(pszulido) {
     }
     belakMennyisege += ' -> sajnos nincs Béla az MB1-ben'
     return belakMennyisege;
-  };
+};
   
-  function GMennyiGergelyVan(pMibenKeres, pMitKeres) {
+function GMennyiGergelyVan(pMibenKeres, pMitKeres) {
     var gergelyekSzama = 0;
     var gergelyekNeve = [];
     for (var i = 0; i < pMibenKeres.length; i++) {
@@ -186,9 +186,9 @@ function GJatekosKoraSzamold(pszulido) {
     }
     gergelyekSzama += ' db ilyen nevű játékos van: '
     return gergelyekSzama + gergelyekNeve;
-  }
+};
   
-  function GHolJatszikGergely(pMibenKeres, pGergely) {
+function GHolJatszikGergely(pMibenKeres, pGergely) {
     var melyikCsapatban = [];
     for (var i = 0; i < pMibenKeres.length; i++) {
       if (pMibenKeres[i].utonev === pGergely) {
@@ -196,35 +196,37 @@ function GJatekosKoraSzamold(pszulido) {
       }
     }
     return melyikCsapatban;
-  };
+};
   
-  function GGyujtsdKiAzErtekeket(pData) {
+function GGyujtsdKiAzErtekeket(pData) {
     var jatekosokErteke = [];
     for (var i = 0; i < data.length; i++) {
       jatekosokErteke.push(pData[i].ertek)
     }
     return jatekosokErteke;
-  }
+};
   
-  console.log('Legidősebb játékos ennyi éves: ' + GLegIdosebbJatekosKora());
-  console.log('Legfiatalabb játékos ennyi éves: ' + GLegFiatalabbJatekosKora());
-  console.log('Legdrágább jatékos ára: ' + GLegDragabbJatekosErteke());
-  console.log('Legolcsóbb játékos ára: ' + GLegOlcsobbJatekosErteke());
-  console.log('Legfiatalabb játékos: ' + GLegFiatalabbJatekosNeve());
-  console.log('Legidősebb játékos: ' + GLegIdosebbJatekosNeve());
-  console.log('Ilyen klubok vannak a bajnokságban: ' + GIlyenKlubokVannak());
-  console.log('Összes játékos értéke a bajnokságban: ' + GOsszesJatekosErteke());
-  console.log('Játékosok értékének átlaga: ' + GJatekosokErtekAtlaga());
-  console.log('Játékosok korának átlaga: ' + GJatekosokKoranakAtlaga());
-  console.log('Ezek a játékosok vannak a Vasasban: ' + GCsapataJatekosai('Vasas'));
-  console.log('Kapus poszton ezek az emberek vannak: ' + GPosztJatekosai('kapus'));
-  console.log('Leghosszabb vezetéknevű játékos: ' + GLegHosszabbVezeteknev());
-  console.log('Legrövidebb vezetéknevű játékos: ' + GLegRovidebbVezeteknev());
-  console.log('Van-e Béla és mennyi? ' + GMennyiBelaVan(data, 'Béla'));
-  console.log('Van-e Gergely és mennyi? ' + GMennyiGergelyVan(data, 'Gergely'));
-  console.log('Melyik csapatban van Gergely? ' + GHolJatszikGergely(data, 'Gergely'));
-  console.log(GGyujtsdKiAzErtekeket(data));
+console.log('Legidősebb játékos ennyi éves: ' + GLegIdosebbJatekosKora());
+console.log('Legfiatalabb játékos ennyi éves: ' + GLegFiatalabbJatekosKora());
+console.log('Legdrágább jatékos ára: ' + GLegDragabbJatekosErteke());
+console.log('Legolcsóbb játékos ára: ' + GLegOlcsobbJatekosErteke());
+console.log('Legfiatalabb játékos: ' + GLegFiatalabbJatekosNeve());
+console.log('Legidősebb játékos: ' + GLegIdosebbJatekosNeve());
+console.log('Ilyen klubok vannak a bajnokságban: ' + GIlyenKlubokVannak());
+console.log('Összes játékos értéke a bajnokságban: ' + GOsszesJatekosErteke());
+console.log('Játékosok értékének átlaga: ' + GJatekosokErtekAtlaga());
+console.log('Játékosok korának átlaga: ' + GJatekosokKoranakAtlaga());
+console.log('Ezek a játékosok vannak a Vasasban: ' + GCsapataJatekosai('Vasas'));
+console.log('Kapus poszton ezek az emberek vannak: ' + GPosztJatekosai('kapus'));
+console.log('Leghosszabb vezetéknevű játékos: ' + GLegHosszabbVezeteknev());
+console.log('Legrövidebb vezetéknevű játékos: ' + GLegRovidebbVezeteknev());
+console.log('Van-e Béla és mennyi? ' + GMennyiBelaVan(data, 'Béla'));
+console.log('Van-e Gergely és mennyi? ' + GMennyiGergelyVan(data, 'Gergely'));
+console.log('Melyik csapatban van Gergely? ' + GHolJatszikGergely(data, 'Gergely'));
+console.log(GGyujtsdKiAzErtekeket(data));
 //Eddig tart Gergely JS kódja.
+
+
 
 //Innen kezdődik Szilvi JS kódja:
 //JÁTÉKOSOK ÉRTÉKSORRENDBEN
@@ -234,12 +236,9 @@ function erteksorrend() {
     for (var i = 0; i < erteksor.length - 1; i++) {
         for (var j = i + 1; j < erteksor.length; j++) {
             if (erteksor[i].ertek > erteksor[j].ertek) {
-
                 var tmp = erteksor[i];
                 erteksor[i] = erteksor[j];
                 erteksor[j] = tmp;
-
-
             }
         }
     }
@@ -443,8 +442,6 @@ function atlagFelettiErtek() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -473,7 +470,6 @@ function atlagertekKapus() {
             }
         }
     }
-
     return kapusatlag;
 }
 
@@ -502,7 +498,6 @@ function atlagertekKozepcsatar() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -531,7 +526,6 @@ function atlagertekHCsatar() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -560,7 +554,6 @@ function atlagertekBalszelso() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -589,7 +582,6 @@ function atlagertekJobbszelso() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -618,7 +610,6 @@ function atlagertekTamadokpalyas() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -647,7 +638,6 @@ function atlagertekBelsokpalyas() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -676,7 +666,6 @@ function atlagertekVedekezokpalyas() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -705,7 +694,6 @@ function atlagertekJobbOldalikpalyas() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -734,7 +722,6 @@ function atlagertekBalOldalikpalyas() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -763,7 +750,6 @@ function atlagertekKozepsoVedo() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -792,7 +778,6 @@ function atlagertekBalOldaliVedo() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -821,7 +806,6 @@ function atlagertekJobbOldaliVedo() {
             }
         }
     }
-
     return atlag;
 }
 
@@ -850,8 +834,6 @@ function atlagFelettiErtekKapus() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -880,8 +862,6 @@ function atlagFelettiErtekKozepcsatar() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -910,8 +890,6 @@ function atlagFelettiErtekHcsatar() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -940,8 +918,6 @@ function atlagFelettiErtekBalszelso() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -970,8 +946,6 @@ function atlagFelettiErtekJobbszelso() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -999,8 +973,6 @@ function atlagFelettiErtekTKpalyas() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -1029,12 +1001,8 @@ function atlagFelettiErtekBKpalyas() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
-
-
 
 //ÁTLAG FELETTI ÉRTÉK VÉDEKEZŐ KÖZÉPPÁLYÁS
 function atlagFelettiErtekVpalyas() {
@@ -1060,8 +1028,6 @@ function atlagFelettiErtekVpalyas() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -1089,8 +1055,6 @@ function atlagFelettiErtekJobbKpalyas() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -1118,8 +1082,6 @@ function atlagFelettiErtekBalKpalyas() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -1147,8 +1109,6 @@ function atlagFelettiErtekKpVedo() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -1176,8 +1136,6 @@ function atlagFelettiErtekBVedo() {
             }
         }
     }
-
-
     return atlagFelettDragak;
 }
 
@@ -1433,8 +1391,6 @@ function khcsatar() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "hátravont csatár" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1450,8 +1406,6 @@ function kbszelso() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "bal szélső" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1467,8 +1421,6 @@ function kjszelso() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "jobb szélső" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1484,8 +1436,6 @@ function ktkppalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "támadó középpályás" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1501,8 +1451,6 @@ function kbpalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "belső középpályás" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1518,8 +1466,6 @@ function kvkpalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "védekező középpályás" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1535,8 +1481,6 @@ function kjkpalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "jobb oldali középpályás" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1552,8 +1496,6 @@ function kbkpalyas() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "bal oldali középpályás" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1569,8 +1511,6 @@ function kkpvedo() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "középső védő" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1586,8 +1526,6 @@ function kjvedo() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "jobb oldali védő" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1603,8 +1541,6 @@ function kbvedo() {
     var poszt = [];
     for (var i = 0; i < data.length; i++) {
         if (data[i].poszt == "bal oldali védő" && data[i].kulfoldi == true) {
-
-
             obj = {}
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
             obj.poszt = data[i].poszt
@@ -1629,7 +1565,6 @@ function szuletesnap() {
     return fullNevSzulinap;
 }
 
-
 //SZÜLETÉSNAP SZERINTI RENDEZÉS
 function korSzerintNovekvo() {
     var lista = szuletesnap();
@@ -1640,17 +1575,12 @@ function korSzerintNovekvo() {
                 lista[i] = tmp[1];
                 lista[j] = tmp[0];
             }
-
         }
-
     }
     return lista;
 }
 /* if (lista[i].szulinapok.getFullYear() < lista[j].szulinapok.getFullYear()) 
  ha nincs ott a getfullyear, akkor nem rendeződik sorba a Date függvénnyel rendezett szuletési dátum lista*/
-
-
-
 
 //KÜLFÖLDI JÁTÉKOSOK
 function kulfoldi() {
@@ -1665,7 +1595,6 @@ function kulfoldi() {
     }
     return kulfoldiek;
 }
-
 
 //MAGYAR JÁTÉKOSOK
 function magyar() {
@@ -1690,12 +1619,10 @@ function kettos() {
         if (data[i].magyar == true && data[i].kulfoldi == true) {
             obj.nev = data[i].vezeteknev + ' ' + data[i].utonev
             kettos.push(obj);
-
         }
     }
     return kettos;
 }
-
 
 //KLUBOK
 function csapatok() {
@@ -1707,7 +1634,6 @@ function csapatok() {
     }
     return csapat;
 }
-
 
 //JÁTÉKOSOK KLUBONKÉNT
 function jatekosokACsapatokban() {
@@ -1729,10 +1655,8 @@ function jatekosokACsapatokban() {
             }
         }
     }
-
     return csapatresult;
 }
-
 
 //LEGFIATALABB JÁTÉKOS
 function MinimumAge() {
@@ -1751,7 +1675,6 @@ function MinimumAge() {
     return minimum;
 }
  
-
 //LEGMAGASABB JÁTÉKOSÉRTÉK
 function legertekesebb() {
     var legertekesebb = data[0].ertek;
@@ -1765,7 +1688,6 @@ function legertekesebb() {
     }
     return legertekesebb;
 }
-
 
 //KÜLFÖLDI KAPUSOK, AKIK IDŐSEBBEK, MINT();
 function kulfoldiKapusokIdosebbMint(atLeastAge) {
@@ -1866,10 +1788,9 @@ console.log('Bal oldali középpályás értéksorrend ', erteksorrendBKpalyas()
 console.log('Középső védő értéksorrend ', erteksorrendKVedo());
 console.log('Jobb oldali védő értéksorrend ', erteksorrendJVedo());
 console.log('Bal oldali védő értéksorrend ', erteksorrendBVedo());
+//Eddig tart Szilvi JS kódja
 
-  //Eddig tart Szilvi JS kódja
-
-  //Innen kezdődik Dorka JS kódja
+//Innen kezdődik Dorka JS kódja
  /* A játékosok összértéke */
 function SumErtek()
 {
