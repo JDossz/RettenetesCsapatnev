@@ -1907,11 +1907,13 @@ console.log('Legfiatalabb játékos: ' + Legfiatalabb());
 function Magyarok()
 {
     var magyarok = [];
+    var magyarokSzama = 0;
     for (var i = 0; i < data.length; i++)
     {
         if (data[i].magyar == true)
         {
-            magyarok += (data[i].vezeteknev + ' ' + data[i].utonev + ', ');
+            magyarokSzama++;
+            magyarok += (magyarokSzama + ". " + data[i].vezeteknev + " " + data[i].utonev + "<br />");
         }
     }
     document.getElementById("magyarok").innerHTML = magyarok;
@@ -1923,11 +1925,13 @@ function Magyarok()
 function Kulfoldiek()
 {
     var kulfoldiek = [];
+    var kulfoldiekSzama = 0;
     for (var i = 0; i < data.length; i++)
     {
         if (data[i].kulfoldi == true)
         {
-            kulfoldiek += (data[i].vezeteknev + ' ' + data[i].utonev + ', ');
+            kulfoldiekSzama++;
+            kulfoldiek += (kulfoldiekSzama + ". " + data[i].vezeteknev + " " + data[i].utonev + "<br />");
         }
     }
     document.getElementById("kulfoldiek").innerHTML = kulfoldiek;
