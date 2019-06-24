@@ -224,10 +224,186 @@ function GJatekosKoraSzamold(pszulido) {
   console.log('Van-e Gergely és mennyi? ' + GMennyiGergelyVan(data, 'Gergely'));
   console.log('Melyik csapatban van Gergely? ' + GHolJatszikGergely(data, 'Gergely'));
   console.log(GGyujtsdKiAzErtekeket(data));
-  //Eddig tart Gergely JS kódja.
+//Eddig tart Gergely JS kódja.
 
-  //Innen kezdődik Szilvi JS kódja:
-// atlag.js
+//Innen kezdődik Szilvi JS kódja:
+//JÁTÉKOSOK ÉRTÉKSORRENDBEN
+function erteksorrend() {
+    var erteksor = data.slice();
+
+    for (var i = 0; i < erteksor.length - 1; i++) {
+        for (var j = i + 1; j < erteksor.length; j++) {
+            if (erteksor[i].ertek > erteksor[j].ertek) {
+
+                var tmp = erteksor[i];
+                erteksor[i] = erteksor[j];
+                erteksor[j] = tmp;
+
+
+            }
+        }
+    }
+    return erteksor;
+}
+
+//ÉRTÉKSORREND KAPUS
+function erteksorrendKapus() {
+
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "kapus") {
+            poszt.push(es[i])
+        }
+    }
+    return poszt;
+}
+
+//ÉRTÉKSORREND KÖZÉPCSATÁR
+function erteksorrendKozepcsatar() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "középcsatár") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//HÁTRAVONT CSATÁR
+function erteksorrendHcsatar() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "hátravont csatár") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//BAL SZÉLSŐ
+function erteksorrendBszelso() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "bal szélső") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//JOBB SZÉLSŐ
+function erteksorrendJszelso() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "jobb szélső") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//TÁMADÓ KÖZÉPPÁLYÁS
+function erteksorrendTKpalyas() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "támadó középpályás") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//BELSŐ KÖZÉPPÁLYÁS
+function erteksorrendbKpalyas() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "belső középpályás") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+
+//VÉDEKEZŐ KÖZÉPPÁLYÁS
+function erteksorrendVKpalyas() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "védekező középpályás") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//JOBB OLDALI KÖZÉPPÁLYÁS
+function erteksorrendJKpalyas() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "jobb oldali középpályás") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//BAL OLDALI KÖZÉPPÁLYÁS
+function erteksorrendBKpalyas() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "bal oldali középpályás") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//KÖZÉPSŐ VÉDŐ
+function erteksorrendKVedo() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "középső védő") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//JOBB OLDALI VÉDŐ
+function erteksorrendJVedo() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "jobb oldali védő") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
+//BAL OLDALI VÉDŐ
+function erteksorrendBVedo() {
+    var es = erteksorrend();
+    var poszt = [];
+    for (var i = 0; i < es.length; i++) {
+        if (es[i].poszt == "bal oldali védő") {
+            poszt.push(es[i]);
+        }
+    }
+    return poszt;
+}
+
 //ÁTLAGÉRTÉK 
 function atlag() {
     var atlag;
@@ -1034,229 +1210,188 @@ function atlagFelettiErtekJVedo() {
     return atlagFelettDragak;
 }
 
-console.log('Játékosok átlagos értéke ', atlag());
-console.log('Átlag feletti értékű játékosok ', atlagFelettiErtek());
-console.log('Átlagérték kapusok ', atlagertekKapus());
-console.log('Átlagérték középcsatárok ', atlagertekKozepcsatar());
-console.log('Átlagérték hátravont csatárok ', atlagertekHCsatar());
-console.log('Átlagérték bal szélsők ', atlagertekBalszelso());
-console.log('Átlagérték jobb szélsők ', atlagertekJobbszelso());
-console.log('Átlagérték támadó középpályások ', atlagertekTamadokpalyas());
-console.log('Átlagérték belső középpályás ', atlagertekBelsokpalyas());
-console.log('Átlagérték védekező középpályás ', atlagertekVedekezokpalyas());
-console.log('Átlagérték jobb oldali középpályás ', atlagertekJobbOldalikpalyas());
-console.log('Átlagérték bal oldali középpályás ', atlagertekBalOldalikpalyas());
-console.log('Átlagérték középső védő ', atlagertekKozepsoVedo());
-console.log('Átlagérték bal oldali védő ', atlagertekBalOldaliVedo());
-console.log('Átlagérték jobb oldali védő ', atlagertekJobbOldaliVedo());
-console.log('Átlag feletti érték kapus ', atlagFelettiErtekKapus());
-console.log('Átlag feletti érték középcsatár ', atlagFelettiErtekKozepcsatar());
-console.log('Átlag feletti érték hátravont csatár ', atlagFelettiErtekHcsatar());
-console.log('Átlag feletti érték bal szélső ', atlagFelettiErtekBalszelso());
-console.log('Átlag feletti érték jobb szélső ', atlagFelettiErtekJobbszelso());
-console.log('Átlag feletti érték támadó középpályás ', atlagFelettiErtekTKpalyas());
-console.log('Átlag feletti érték bal oldali középpályás ', atlagFelettiErtekBKpalyas());
-console.log('Átlag feletti érték védekező középpályás ', atlagFelettiErtekVpalyas());
-console.log('Átlag feletti érték jobb oldali középpályás ', atlagFelettiErtekJobbKpalyas());
-console.log('Átlag feletti érték bal oldali középpályás ', atlagFelettiErtekBalKpalyas());
-console.log('Átlag feletti érték középső védő ', atlagFelettiErtekKpVedo());
-console.log('Átlag feletti érték bal oldali védő ', atlagFelettiErtekBVedo());
-console.log('Átlag feletti érték jobb oldali védő ', atlagFelettiErtekJVedo());
-
-// erteksorrend.js
-//13. JÁTÉKOSOK ÉRTÉKSORRENDBEN
-function erteksorrend() {
-    var erteksor = data.slice();
-
-    for (var i = 0; i < erteksor.length - 1; i++) {
-        for (var j = i + 1; j < erteksor.length; j++) {
-            if (erteksor[i].ertek > erteksor[j].ertek) {
-
-                var tmp = erteksor[i];
-                erteksor[i] = erteksor[j];
-                erteksor[j] = tmp;
-
-
-            }
-        }
-    }
-    return erteksor;
-}
-
-//ÉRTÉKSORREND KAPUS
-function erteksorrendKapus() {
-
-    var es = erteksorrend();
+//KAPUS
+function kapusok() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "kapus") {
-            poszt.push(es[i])
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "kapus") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
-//ÉRTÉKSORREND KÖZÉPCSATÁR
-function erteksorrendKozepcsatar() {
-    var es = erteksorrend();
+//KÖZÉPCSATÁR
+function kpcsatar() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "középcsatár") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "középcsatár") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //HÁTRAVONT CSATÁR
-function erteksorrendHcsatar() {
-    var es = erteksorrend();
+function hcsatar() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "hátravont csatár") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "hátravont csatár") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //BAL SZÉLSŐ
-function erteksorrendBszelso() {
-    var es = erteksorrend();
+function bszelso() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "bal szélső") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "bal szélső") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //JOBB SZÉLSŐ
-function erteksorrendJszelso() {
-    var es = erteksorrend();
+function jszelso() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "jobb szélső") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "jobb szélső") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //TÁMADÓ KÖZÉPPÁLYÁS
-function erteksorrendTKpalyas() {
-    var es = erteksorrend();
+function tkppalyas() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "támadó középpályás") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "támadó középpályás") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //BELSŐ KÖZÉPPÁLYÁS
-function erteksorrendbKpalyas() {
-    var es = erteksorrend();
+function bpalyas() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "belső középpályás") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "belső középpályás") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
-
 //VÉDEKEZŐ KÖZÉPPÁLYÁS
-function erteksorrendVKpalyas() {
-    var es = erteksorrend();
+function vkpalyas() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "védekező középpályás") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "védekező középpályás") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //JOBB OLDALI KÖZÉPPÁLYÁS
-function erteksorrendJKpalyas() {
-    var es = erteksorrend();
+function jkpalyas() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "jobb oldali középpályás") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "jobb oldali középpályás") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //BAL OLDALI KÖZÉPPÁLYÁS
-function erteksorrendBKpalyas() {
-    var es = erteksorrend();
+function bkpalyas() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "bal oldali középpályás") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "bal oldali középpályás") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //KÖZÉPSŐ VÉDŐ
-function erteksorrendKVedo() {
-    var es = erteksorrend();
+function kpvedo() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "középső védő") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "középső védő") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //JOBB OLDALI VÉDŐ
-function erteksorrendJVedo() {
-    var es = erteksorrend();
+function jvedo() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "jobb oldali védő") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "jobb oldali védő") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
 //BAL OLDALI VÉDŐ
-function erteksorrendBVedo() {
-    var es = erteksorrend();
+function bvedo() {
     var poszt = [];
-    for (var i = 0; i < es.length; i++) {
-        if (es[i].poszt == "bal oldali védő") {
-            poszt.push(es[i]);
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].poszt == "bal oldali védő") {
+            obj = {};
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+            obj.poszt = data[i].poszt
+            poszt.push(obj);
         }
     }
     return poszt;
 }
 
-console.log('Játékosok értéksorrendje', erteksorrend());
-console.log('Kapus értéksorrend', erteksorrendKapus());
-console.log('Középcsatár értéksorrend', erteksorrendKozepcsatar());
-console.log('Hátravont csatár értéksorrend ', erteksorrendHcsatar());
-console.log('Bal szélső értéksorrend ', erteksorrendBszelso());
-console.log('Jobb szélső értéksorrend ', erteksorrendJszelso());
-console.log('Támadó középpályás értéksorrend ', erteksorrendTKpalyas());
-console.log('Belső középpályás értéksorrend ', erteksorrendbKpalyas());
-console.log('Védekező középpályás értéksorrend ', erteksorrendVKpalyas());
-console.log('Jobb oldali középpályás értéksorrend ', erteksorrendJKpalyas());
-console.log('Bal oldali középpályás értéksorrend ', erteksorrendBKpalyas());
-console.log('Középső védő értéksorrend ', erteksorrendKVedo());
-console.log('Jobb oldali védő értéksorrend ', erteksorrendJVedo());
-console.log('Bal oldali védő értéksorrend ', erteksorrendBVedo());
-
-// kulfoldiPosztok.js
 //KÜLFÖLDI KAPUSOK
 function kKapus() {
     var poszt = [];
@@ -1480,6 +1615,186 @@ function kbvedo() {
     return poszt;
 }
 
+//SZÜLETÉSNAPOK NÉVSORRENDBEN
+function szuletesnap() {
+    var fullNevSzulinap = [];
+    var szulinap = new Date(data[0].szulido);
+
+    for (var i = 0; i < data.length; i++) {
+        obj = {};
+        obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
+        obj.szulinapok = new Date(data[i].szulido);
+        fullNevSzulinap.push(obj);
+    }
+    return fullNevSzulinap;
+}
+
+
+//SZÜLETÉSNAP SZERINTI RENDEZÉS
+function korSzerintNovekvo() {
+    var lista = szuletesnap();
+    for (var i = 0; i < lista.length - 1; i++) {
+        for (var j = i + 1; j < lista.length; j++) {
+            if (lista[i].szulinapok.getFullYear() < lista[j].szulinapok.getFullYear()) {
+                var tmp = [lista[i], lista[j]];
+                lista[i] = tmp[1];
+                lista[j] = tmp[0];
+            }
+
+        }
+
+    }
+    return lista;
+}
+/* if (lista[i].szulinapok.getFullYear() < lista[j].szulinapok.getFullYear()) 
+ ha nincs ott a getfullyear, akkor nem rendeződik sorba a Date függvénnyel rendezett szuletési dátum lista*/
+
+
+
+
+//KÜLFÖLDI JÁTÉKOSOK
+function kulfoldi() {
+    var kulfoldiek = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = {};
+        if (data[i].kulfoldi == true) {
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev
+            kulfoldiek.push(obj);
+
+        }
+    }
+    return kulfoldiek;
+}
+
+
+//MAGYAR JÁTÉKOSOK
+function magyar() {
+    var magyarok = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = {};
+        if (data[i].magyar == true) {
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev
+            magyarok.push(obj);
+
+        }
+    }
+    return magyarok;
+}
+console.log(magyar());
+
+//KETTŐS ÁLLAMPOLGÁROK
+function kettos() {
+    var kettos = [];
+    for (var i = 0; i < data.length; i++) {
+        var obj = {};
+        if (data[i].magyar == true && data[i].kulfoldi == true) {
+            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev
+            kettos.push(obj);
+
+        }
+    }
+    return kettos;
+}
+
+
+//KLUBOK
+function csapatok() {
+    var csapat = [];
+    for (var i = 0; i < data.length; i++) {
+        if (csapat.indexOf(data[i].klub) == -1) {
+            csapat.push(data[i].klub);
+        }
+    }
+    return csapat;
+}
+
+
+//JÁTÉKOSOK KLUBONKÉNT
+function jatekosokACsapatokban() {
+    var csapatresult = [];
+    var csapat = csapatok();
+    var jatekos;
+    for (var i = 0; i < csapat.length; i++) {
+        csapatresult.push({
+            name: csapat[i],
+            jatekosok: []
+        });
+    }
+    for (var i = 0; i < data.length; i++) {
+        jatekos = data[i];
+        for (var j = 0; j < csapatresult.length; j++) {
+            if (csapatresult[j].name === data[i].klub) {
+                csapatresult[j].jatekosok.push(jatekos);
+                break;
+            }
+        }
+    }
+
+    return csapatresult;
+}
+
+
+//LEGFIATALABB JÁTÉKOS
+function MinimumAge() {
+    var nk = nevKor();
+    var minimum;
+
+    if (nk.length > 0) {
+        minimum = nk[0].kor
+    }
+
+    for (var i = 1; i < nk.length; i++) {
+        if (nk[i].kor < minimum) {
+            minimum = nk[i].kor
+        }
+    }
+    return minimum;
+}
+ 
+
+//LEGMAGASABB JÁTÉKOSÉRTÉK
+function legertekesebb() {
+    var legertekesebb = data[0].ertek;
+
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].ertek > legertekesebb) {
+            legertekesebb = data[i].ertek;
+
+
+        }
+    }
+    return legertekesebb;
+}
+
+
+//KÜLFÖLDI KAPUSOK, AKIK IDŐSEBBEK, MINT();
+function kulfoldiKapusokIdosebbMint(atLeastAge) {
+    var kulkapus = [];
+    for (var i = 0; i < data.length; i++) {
+
+        if (data[i].poszt == "kapus" && data[i].kulfoldi && kor(data[i]) > atLeastAge) {
+
+            kulkapus.push(data[i]);
+        }
+    }
+    return kulkapus;
+}
+
+console.log('Teljes név ', teljesNev());
+console.log('Teljes név és kor ', nevKor());
+console.log('Kor ', kor(data[0]));
+console.log('Születésnapok névsorrendben ', szuletesnap());
+console.log('Teljes név és születésnap ', szuletesnap());
+console.log('Kor szerint növekvő sorrend ', korSzerintNovekvo());
+console.log('Külföldi játékosok ', kulfoldi());
+console.log('Magyar játékosok ', magyar());
+console.log('Kettős állampolgárok ', kettos());
+console.log('Klubok ', csapatok());
+console.log('Játékosok klubonként ', jatekosokACsapatokban());
+console.log('Legfiatalabb játékos ', MinimumAge());
+console.log('Legértékesebb játékos ', legertekesebb());
+console.log('Külföldi játékosok, akik idősebbek, mint ', kulfoldiKapusokIdosebbMint(30));
+
 console.log('Külföldi kapus ', kKapus());
 console.log('Külföldi középcsatár ', kKozepcsatar());
 console.log('Külföldi hátravont csatár ', khcsatar());
@@ -1494,188 +1809,6 @@ console.log('Külföldi középső védő ', kkpvedo());
 console.log('Külföldi jobb oldali védő ', kjvedo());
 console.log('Külföldi bal oldali védő ', kbvedo());
 
-// posztok.js
-//KAPUS
-function kapusok() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "kapus") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//KÖZÉPCSATÁR
-function kpcsatar() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "középcsatár") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//HÁTRAVONT CSATÁR
-function hcsatar() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "hátravont csatár") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//BAL SZÉLSŐ
-function bszelso() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "bal szélső") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//JOBB SZÉLSŐ
-function jszelso() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "jobb szélső") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//TÁMADÓ KÖZÉPPÁLYÁS
-function tkppalyas() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "támadó középpályás") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//BELSŐ KÖZÉPPÁLYÁS
-function bpalyas() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "belső középpályás") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//VÉDEKEZŐ KÖZÉPPÁLYÁS
-function vkpalyas() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "védekező középpályás") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//JOBB OLDALI KÖZÉPPÁLYÁS
-function jkpalyas() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "jobb oldali középpályás") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//BAL OLDALI KÖZÉPPÁLYÁS
-function bkpalyas() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "bal oldali középpályás") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//KÖZÉPSŐ VÉDŐ
-function kpvedo() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "középső védő") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//JOBB OLDALI VÉDŐ
-function jvedo() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "jobb oldali védő") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
-
-//BAL OLDALI VÉDŐ
-function bvedo() {
-    var poszt = [];
-    for (var i = 0; i < data.length; i++) {
-        if (data[i].poszt == "bal oldali védő") {
-            obj = {};
-            obj.nev = data[i].vezeteknev + ' ' + data[i].utonev;
-            obj.poszt = data[i].poszt
-            poszt.push(obj);
-        }
-    }
-    return poszt;
-}
 console.log('Kapusok ', kapusok());
 console.log('Középcsatárok ', kpcsatar());
 console.log('Hátravont csatárok ', hcsatar());
@@ -1690,63 +1823,49 @@ console.log('Középső védő ', kpvedo());
 console.log('Jobb oldali védők ', jvedo());
 console.log('Bal oldali védők ', bvedo());
 
-// table.js
-//klubok
-var tablecsapat = '<table border=1><tr><th>Csapatnév</th></tr>';
-var klubok = csapatok()
-for (var i = 0; i < klubok.length; i++) {
-    tablecsapat += '<tr><td>' + klubok[i] + '</td></tr>'
-}
-tablecsapat += '</table>'
+console.log('Játékosok átlagos értéke ', atlag());
+console.log('Átlag feletti értékű játékosok ', atlagFelettiErtek());
+console.log('Átlagérték kapusok ', atlagertekKapus());
+console.log('Átlagérték középcsatárok ', atlagertekKozepcsatar());
+console.log('Átlagérték hátravont csatárok ', atlagertekHCsatar());
+console.log('Átlagérték bal szélsők ', atlagertekBalszelso());
+console.log('Átlagérték jobb szélsők ', atlagertekJobbszelso());
+console.log('Átlagérték támadó középpályások ', atlagertekTamadokpalyas());
+console.log('Átlagérték belső középpályás ', atlagertekBelsokpalyas());
+console.log('Átlagérték védekező középpályás ', atlagertekVedekezokpalyas());
+console.log('Átlagérték jobb oldali középpályás ', atlagertekJobbOldalikpalyas());
+console.log('Átlagérték bal oldali középpályás ', atlagertekBalOldalikpalyas());
+console.log('Átlagérték középső védő ', atlagertekKozepsoVedo());
+console.log('Átlagérték bal oldali védő ', atlagertekBalOldaliVedo());
+console.log('Átlagérték jobb oldali védő ', atlagertekJobbOldaliVedo());
+console.log('Átlag feletti érték kapus ', atlagFelettiErtekKapus());
+console.log('Átlag feletti érték középcsatár ', atlagFelettiErtekKozepcsatar());
+console.log('Átlag feletti érték hátravont csatár ', atlagFelettiErtekHcsatar());
+console.log('Átlag feletti érték bal szélső ', atlagFelettiErtekBalszelso());
+console.log('Átlag feletti érték jobb szélső ', atlagFelettiErtekJobbszelso());
+console.log('Átlag feletti érték támadó középpályás ', atlagFelettiErtekTKpalyas());
+console.log('Átlag feletti érték bal oldali középpályás ', atlagFelettiErtekBKpalyas());
+console.log('Átlag feletti érték védekező középpályás ', atlagFelettiErtekVpalyas());
+console.log('Átlag feletti érték jobb oldali középpályás ', atlagFelettiErtekJobbKpalyas());
+console.log('Átlag feletti érték bal oldali középpályás ', atlagFelettiErtekBalKpalyas());
+console.log('Átlag feletti érték középső védő ', atlagFelettiErtekKpVedo());
+console.log('Átlag feletti érték bal oldali védő ', atlagFelettiErtekBVedo());
+console.log('Átlag feletti érték jobb oldali védő ', atlagFelettiErtekJVedo());
 
-//document.querySelector(".klubok").innerHTML = tablecsapat;
-
-//klubok játékosai
-
-var tablecsapatjatekos = '<table border=1><tr><th>Klubok</th><th>Játékosok</th></tr>';
-var klubjatekosok = jatekosokACsapatokban();
-for (var i = 0; i < klubjatekosok.length; i++) {
-    var jt = '<table>';
-    for (var j = 0; j < klubjatekosok[i].jatekosok.length; j++) {
-        var x = klubjatekosok[i].jatekosok[j]
-        jt += '<tr><td>' + x.vezeteknev + ' ' + x.utonev + '</td></tr>'
-    }
-    jt += '</table>'
-    tablecsapatjatekos += '<tr><td>' + klubjatekosok[i].name + '</td><td>' + jt + '</td></tr>'
-}
-tablecsapatjatekos += '</table>'
-
-//document.querySelector(".klubjatekosok").innerHTML = tablecsapatjatekos;
-
-//teljes név és kor
-
-var tablefnk = '<table border=1><tr><th>Név</th><th>Kor</th></tr>';
-var fullnevkor = nevKor();
-for (var i = 0; i < fullnevkor.length; i++) {
-    tablefnk += '<tr><td>' + fullnevkor[i].nev + '</td><td>' + fullnevkor[i].kor + '</td></tr>'
-}
-tablefnk += '</table>'
-
-document.querySelector(".fullnevkor").innerHTML = tablefnk;
-
-//születésnap
-
-var tableszn = '<table border=1><tr><th>Név</th><th>Kor</th></tr>';
-var fullNevSzulinap = szuletesnap();
-for (var i = 0; i < fullNevSzulinap.length; i++) {
-    tableszn += '<tr><td>' + fullNevSzulinap[i].nev + '</td><td>' + fullNevSzulinap[i].szulinap + '</td></tr>'
-}
-tableszn += '</table>'
-
-document.querySelector(".fullNevSzulinap").innerHTML = tablefnk;
-
-//átlagos érték
-var tableatlag = '<table border=1><tr><th>Átlagos érték</th></tr>';
-var atlag = atlag()
-for (var i = 0; i < atlag.length; i++) {
-    tableatlag += '<tr><td>' + atlag[i] + '</td></tr>'
-}
-tableatlag += '</table>'
+console.log('Játékosok értéksorrendje', erteksorrend());
+console.log('Kapus értéksorrend', erteksorrendKapus());
+console.log('Középcsatár értéksorrend', erteksorrendKozepcsatar());
+console.log('Hátravont csatár értéksorrend ', erteksorrendHcsatar());
+console.log('Bal szélső értéksorrend ', erteksorrendBszelso());
+console.log('Jobb szélső értéksorrend ', erteksorrendJszelso());
+console.log('Támadó középpályás értéksorrend ', erteksorrendTKpalyas());
+console.log('Belső középpályás értéksorrend ', erteksorrendbKpalyas());
+console.log('Védekező középpályás értéksorrend ', erteksorrendVKpalyas());
+console.log('Jobb oldali középpályás értéksorrend ', erteksorrendJKpalyas());
+console.log('Bal oldali középpályás értéksorrend ', erteksorrendBKpalyas());
+console.log('Középső védő értéksorrend ', erteksorrendKVedo());
+console.log('Jobb oldali védő értéksorrend ', erteksorrendJVedo());
+console.log('Bal oldali védő értéksorrend ', erteksorrendBVedo());
 
   //Eddig tart Szilvi JS kódja
 
