@@ -26,17 +26,27 @@ html {
     color: brown;
 }
 
-/* egyenlőre elengedem a képet, majd foglalkozom vele, ha lesz idő */
-/*
 header {
-    background-image: url("../img/dsBuffer.jpg");
-    opacity: 0.5;
+    background-image: url("../img/labda.gif");
 }
-*/
 
-/* egyenlőre elengedem a képet, majd foglalkozom vele, ha lesz idő */
-/*
 footer {
     background-image: url("../img/labda.gif");
 }
-*/
+
+footer > a:link {
+    font-size: 16pt;
+    color: brown;
+    background-color: whitesmoke;
+}
+footer > a:visited {
+    font-size: 16pt;
+    color: brown;
+    background-color: whitesmoke;
+}
+footer > a:hover {
+    font-size: 16pt;
+    color: greenyellow;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
